@@ -1,6 +1,10 @@
 package com.cis.librarymanagement.demo.book;
 
 public class Book {
+    private int bookID;
+    private String title;
+    private String author;
+    private double price;
     public int getBookID() {
         return bookID;
     }
@@ -33,9 +37,6 @@ public class Book {
         this.price = price;
     }
 
-    private int bookID;
-    private String title;
-    private String author;
-    private double price;
+
 
 }

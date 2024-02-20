@@ -5,13 +5,10 @@ import com.cis.librarymanagement.demo.member.Member;
 import com.cis.librarymanagement.demo.service.BookService;
 import com.cis.librarymanagement.demo.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-
+@RestController
 public class BookController {
     @Autowired
     private BookService bookService;
@@ -22,9 +19,9 @@ public class BookController {
         return bookService.createBook(book);
     }
     @RequestMapping(value = "/book", method = RequestMethod.DELETE)
-    public Book delete(@RequestBody Book book){
+    public Book delete(@RequestParam int bookID){
 
-        return null;
+        return bookService.deleteBook(bookID);
 
     }
     @RequestMapping(value = "/book", method = RequestMethod.GET)
